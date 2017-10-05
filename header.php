@@ -12,6 +12,8 @@
 <!doctype html>
 <html class="no-js" <?php language_attributes(); ?> >
 	<head>
+		<link href="https://fonts.googleapis.com/css?family=Bree+Serif|Permanent+Marker" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
 		<meta charset="<?php bloginfo( 'charset' ); ?>" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<?php wp_head(); ?>

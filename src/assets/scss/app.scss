@@ -57,10 +57,11 @@
   My custom styles:
   Add your scss files below to structure your project styles
 */
+@import "custom/custom";
 
 // Global
 @import "global/_accessibility";
-@import "global/colors";
+@import "global/colors";  
 @import "global/wp-admin";
 @import "global/wp-overrides";
 

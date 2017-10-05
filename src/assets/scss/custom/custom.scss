@@ -1,0 +1,29 @@
+//Google Font
+
+$custom-font-family: 'Permanent Marker', cursive;
+
+.custom-font{
+    font-family: $custom-font-family;
+}
+
+$sans-font-family: 'Open Sans', sans-serif;;
+
+.sans-font{
+    font-family: $sans-font-family;
+}
+
+.wrapping{
+    position:relative;
+}
+
+.text {
+    left: 0;
+    position:absolute;
+    text-align:center;
+    top: 30px;
+    width: 100%
+}
+
+.white{
+    color: #FFFFFF;
+}

@@ -140,7 +140,7 @@ $header-lineheight: 1.4;
 $header-margin-bottom: 0.5rem;
 $header-styles: (
   small: (
-    'h1': ('font-size': 24),
+    'h1': ('font-size': 36),
     'h2': ('font-size': 20),
     'h3': ('font-size': 19),
     'h4': ('font-size': 18),
@@ -148,7 +148,7 @@ $header-styles: (
     'h6': ('font-size': 16),
   ),
   medium: (
-    'h1': ('font-size': 48),
+    'h1': ('font-size': 72),
     'h2': ('font-size': 40),
     'h3': ('font-size': 31),
     'h4': ('font-size': 25),
@@ -288,14 +288,16 @@ $button-background-hover: scale-color($button-background, $lightness: -15%);
 $button-color: $white;
 $button-color-alt: $black;
 $button-radius: $global-radius;
-$button-hollow-border-width: 1px;
+$button-hollow-border-width: 3px;
 $button-sizes: (
   tiny: 0.6rem,
   small: 0.75rem,
   default: 0.9rem,
   large: 1.25rem,
 );
-$button-palette: $foundation-palette;
+$button-palette: map-merge($foundation-palette, (
+  white: #FFFFFF
+)) !default;
 $button-opacity-disabled: 0.25;
 $button-background-hover-lightness: -20%;
 $button-hollow-hover-lightness: -50%;
