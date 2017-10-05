@@ -13,6 +13,7 @@
 <html class="no-js" <?php language_attributes(); ?> >
 	<head>
 		<link href="https://fonts.googleapis.com/css?family=Bree+Serif|Permanent+Marker" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
 		<meta charset="<?php bloginfo( 'charset' ); ?>" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
