@@ -1,6 +1,7 @@
 //Google Font
 
 $custom-font-family: 'Permanent Marker', cursive;
+$blue: #447684;
 
 .custom-font{
     font-family: $custom-font-family;
@@ -11,19 +12,25 @@ $sans-font-family: 'Open Sans', sans-serif;;
 .sans-font{
     font-family: $sans-font-family;
 }
-
+//These position classes below were causing the issue. You should need these classes to get the section put together
 .wrapping{
-    position:relative;
+    //position:relative;
 }
-
 .text {
     left: 0;
-    position:absolute;
+    //position:absolute;
     text-align:center;
     top: 30px;
     width: 100%
 }
-
 .white{
     color: #FFFFFF;
+}
+//Added Bleed background with color scheme
+.bleed{
+	background-color: $blue;
+}
+//This is how we pad sections
+.roomy{
+	padding:2em 0em;
 }
