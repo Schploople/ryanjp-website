@@ -4,27 +4,36 @@ Template Name: Custom Theme
 */
 get_header(); ?>
 
-	<script id="__bs_script__">
-		//<![CDATA[
-		document.write("<script async src='http://HOST:3001/browser-sync/browser-sync-client.js?v=2.18.13'><\/script>".replace(
-			"HOST", location.hostname));
-		//]]>
+<script src="/js/vendor/jquery.js"></script>
+	<script src="/js/vendor/fastclick.js"></script>
 
+	<script src="/js/foundation.min.js"></script>
+
+	<script>
+  		$(document).foundation();
 	</script>
 
-	<section class="white bleed">
+	<section class="white">
 		<div class="grid-x roomy">
 			<div class="cell">
 				<div class="text">
-					<h1 class="entry-title custom-font">John Ryan</h1>
-					<h6 class="sans-font">This is my first website!</h6>
-					<a class="hollow button sans-font white" href="#">Home Page</a>
+					<h1 class="entry-title custom-font"><?php echo get_the_title(); ?></h1>
+					<h6 class="sans-font"><?php
+				// Retrieves the stored value from the database
+    				$meta_value = get_post_meta( get_the_ID(), 'sub-header-text', true );
+ 
+				// Checks and displays the retrieved value
+   					 if( !empty( $meta_value ) ) {
+      					  echo $meta_value;
+   					 }
+				?></h6>
+					<a class="hollow button sans-font white" href="<?php echo get_site_url(); ?>/about-page/">About Me</a>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<div class="grid-container">
+	<div class="grid-container white opaque-layer">
 		<div class="grid-x grid-margin-x">
 			<div class="cell">
 				<h1 class="center less-roomy">What We Do</h1>
@@ -32,10 +41,9 @@ get_header(); ?>
 		</div>
 		<div class="grid-x grid-padding-x grid-margin-x">
 			<div class="cell medium-6" style="height: 850px;">
-				<div class="flex-video widescreen vimeo">
-					<iframe src="http://player.vimeo.com/video/60122989" width="400" height="225" frameborder="0" webkitAllowFullScreen mozallowfullscreen
-					  allowFullScreen></iframe>
-				</div>
+			<div class="responsive-embed">
+			<iframe width="420" height="315" src="https://www.youtube.com/embed/mM5_T-F1Yn4" frameborder="0" allowfullscreen></iframe>
+		  </div>
 				<div class="roomy">
 					Lorem ipsum dolor sit amet, eu delectus scriptorem usu. Vix populo vivendo referrentur in, cum cu tantas temporibus, his
 					ad epicurei atomorum. Vim civibus perfecto ex, ius ad lobortis aliquando, at qui lorem aliquid. Repudiandae accommodare
@@ -66,7 +74,7 @@ get_header(); ?>
 										delicatissimi sed et, at atqui audiam adolescens sed, ne qui voluptaria intellegebat. Sonet ceteros tibique eam
 										id, est at minim facilisi invenire, reque sensibus ad qui. Qui ut alia malorum, ne lobortis praesent sapientem
 										mea, ut assum menandri cum.
-					</h6>
+									</h6>
 								</div>
 							</div>
 						</div>
@@ -114,7 +122,7 @@ get_header(); ?>
 										delicatissimi sed et, at atqui audiam adolescens sed, ne qui voluptaria intellegebat. Sonet ceteros tibique eam
 										id, est at minim facilisi invenire, reque sensibus ad qui. Qui ut alia malorum, ne lobortis praesent sapientem
 										mea, ut assum menandri cum.
-					</h6>
+									</h6>
 								</div>
 							</div>
 						</div>
@@ -122,9 +130,70 @@ get_header(); ?>
 				</div>
 			</div>
 			<div class="cell shrink footer">
-				<h3>Here's my footer</h3>
 			</div>
 		</div>
+	</div>
+	<br>
+	<br>
 
 
-		<?php get_footer();
+	<div class="grid-container white opaque-layer">
+		<div class="grid-x grid-margin-x">
+			<h1 class="cell center less-roomy">Recent Updates</h1>
+		</div>
+
+		<div class="grid-x grid-padding-x ">
+			<?php
+		
+		$newsPosts = new WP_Query('category_name=category&posts_per_page=3');
+		
+		if ($newsPosts->have_posts()) :
+			while ($newsPosts->have_posts()) : $newsPosts->the_post();
+			?>
+				<?php get_template_part( 'template-parts/cardloop' ); ?>
+				<?php endwhile;
+			
+			else : 
+				// fallback no content message here
+		endif;
+		wp_reset_postdata();
+	?>
+		</div>
+		<div class="grid-x grid-margin-x">
+			<div class="cell center">
+				<a class="hollow button white" href="<?php echo get_site_url(); ?>/updates/">
+					<h3>Read All Updates</h3>
+				</a>
+			</div>
+		</div>
+	</div>
+	<br>
+
+	<div class="grid-container white opaque-layer">
+		<div class="grid-x grid-margin-x">
+			<h1 class="cell center less-roomy">
+
+				<?php
+				// Retrieves the stored value from the database
+    				$meta_value = get_post_meta( get_the_ID(), 'meta-text', true );
+ 
+				// Checks and displays the retrieved value
+   					 if( !empty( $meta_value ) ) {
+      					  echo $meta_value;
+   					 }
+				?>
+
+			</h1>
+		</div>
+		<div class="grid-x grid-margin-x grid-padding-x ">
+			<div class="cell">
+				<?php echo do_shortcode('[formidable id="5"]'); ?>
+			</div>
+		</div>
+	</div>
+
+	
+
+
+
+	<?php get_footer();

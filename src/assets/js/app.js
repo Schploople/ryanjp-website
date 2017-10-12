@@ -11,3 +11,8 @@ import Foundation from 'foundation-sites';
 import './lib/demosite';
 
 $(document).foundation();
+
+//custom
+// closes the panel on click outside
+  
+  
