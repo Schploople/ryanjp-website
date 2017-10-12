@@ -4,14 +4,7 @@ Template Name: Custom Theme
 */
 get_header(); ?>
 
-<script src="/js/vendor/jquery.js"></script>
-	<script src="/js/vendor/fastclick.js"></script>
 
-	<script src="/js/foundation.min.js"></script>
-
-	<script>
-  		$(document).foundation();
-	</script>
 
 	<section class="white">
 		<div class="grid-x roomy">
@@ -192,8 +185,41 @@ get_header(); ?>
 		</div>
 	</div>
 
+	<div class="contact-panel" id="contact-panel" data-toggler=".is-active">
+  <a class="contact-panel-button" data-toggle="contact-panel">Contact us</a>
+  <form action="">
+    <div class="row">
+      <label>Full name *
+        <input type="text" placeholder="Full name">
+      </label>
+    </div>
+    <div class="row">
+      <label>Email *
+        <input type="email" placeholder="Email address">
+      </label>
+    </div>
+    <div class="row">
+      <label>Message *
+        <textarea placeholder="Describe your needs" rows="3"></textarea>
+      </label>
+    </div>
+    <div class="contact-panel-actions">
+      <button class="cancel-button" data-toggle="contact-panel">Nevermind</button>
+      <input type="submit" class="button submit-button" value="Submit">
+    </div>
+  </form>
+</div>
+
+
 	
 
+	<script src="/js/vendor/jquery.js"></script>
+	<script src="/js/vendor/fastclick.js"></script>
 
+	<script src="/js/foundation.min.js"></script>
+
+	<script>
+  		$(document).foundation();
+	</script>
 
 	<?php get_footer();
